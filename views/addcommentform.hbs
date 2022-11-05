@@ -1,0 +1,94 @@
+<form action="/addcomment" method="post" class="myForm">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                <h1>Σχόλια</h1>
+            </div>
+        </div>
+
+        <fieldset class="border p-2 mb-3">
+            <legend class="w-auto">Σχολιασμός βιλίου</legend>
+
+            <div class="row mb-3">
+                <div class="col-md-10 col-sm-10">
+                    <input type="text" class="form-control" id="bookTitle2" name="bookTitle2"
+                        placeholder="Γράψτε τον τίτλο του βιβλίου" value="{{bookTitle}}" hidden readonly>
+                    {{!-- <div class="valid-feedback"> Μιά χαρά! </div>
+                    <div class="invalid-feedback"> {{message.newBookTitle.msg}} </div> --}}
+
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="bookTitle" class="col-form-label">Τίτλος</label>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                    <input type="text" class="form-control" id="bookTitle" name="bookTitle"
+                        placeholder="Γράψτε τον τίτλο του βιβλίου" value="{{bookTitle}}" disabled>
+                    {{!-- <div class="valid-feedback"> Μιά χαρά! </div>
+                    <div class="invalid-feedback"> {{message.newBookTitle.msg}} </div> --}}
+
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="bookAuthor" class="col-form-label">Συγγραφέας</label>
+                </div>
+                <div class="col-md-10 col-sm-10 position-relative">
+                    <input type="text" class="form-control" id="bookAuthor" name="bookAuthor"
+                        placeholder="Γράψτε τον συγγραφέα του βιβλίου" value="{{bookAuthor}}" disabled>
+                    {{!-- <div class="valid-feedback"> Μιά χαρά! </div>
+                    <div class="invalid-feedback"> {{message.newBookAuthor.msg}} </div> --}}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-2 col-sm-12 justify-content-end d-flex">
+                    <label for="newComment" class="col-form-label">Σχόλιο</label>
+                </div>
+                <div class="col-md-10 col-sm-10 position-relative">
+                    <input type="text" class="form-control" id="bookComment" name="bookComment"
+                        placeholder="Γράψτε το σχόλιό σας για το βιβλίο" value="{{bookComment}}">
+                    {{!-- <div class="valid-feedback"> Μιά χαρά! </div>
+                    <div class="invalid-feedback"> {{message.newComment.msg}} </div> --}}
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="row mb-3">
+            <div class="col">
+                <button type="submit" class="btn btn-primary mb-3">Υποβολή σχολίου</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<h2>Σχόλια άλλων χρηστών για το βιβλίο: </h2>
+{{#unless otherComments}}
+<div class="row mt-5">
+  <div class="col">
+    <h3>Δεν υπάρχουν σχόλια άλλων χρηστών για το συγκεκριμένο βιβλίο!</h3>
+  </div>
+</div>
+{{/unless}}
+{{#if otherComments}}
+<div class="table-responsive-sm">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Χρήστης</th>
+                <th>Σχόλιο</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each otherComments}}
+            <tr>
+                <td>{{this.UserName}}</td>
+                <td>{{this.comment}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{/if}}
