@@ -2,7 +2,7 @@
 
 Η εφαρμογή ourBooks είναι μια απλή εφαρμογή διαχείρισης των βιβλίων μιας μικρής ομάδας φίλων.
 
-Η εφαρμογή έχει δημοσιευτεί στο [Heroku](https://www.heroku.com/) και μπορείτε να την δοκιμάσετε στον ακόλουθο σύνδεσμο [ourBooks](https://mathesis-week3pg.herokuapp.com/)!
+Η εφαρμογή έχει δημοσιευτεί στο [Heroku](https://www.heroku.com/) και μπορείτε να την δοκιμάσετε στον ακόλουθο σύνδεσμο [ourBooks](https://our-books-app.herokuapp.com/)!
 
 
 
